@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <script>
+            let YUser = parseInt(prompt("Altura del tablero"))
+            let XUser = parseInt(prompt("Anchura del tablero"))
+            let X
+
+            for (let y = 1; y <= YUser; y = y + 1) {
+                for (let x = 1; x <= XUser; x = x + 1) {
+                    if (x == 1) {
+                        X = parseInt((y / 8) + y) % 2 == 0 ? 'X' : 'O';
+                    }
+                    if (x != 0) {
+                        X = X + (parseInt(((x-y) / 8) + (x-y)) % 2 == 0 ? 'X' : 'O');
+                    }
+                }
+                console.log(X)
+            }
+        </script>
+    </body>
+</html>
